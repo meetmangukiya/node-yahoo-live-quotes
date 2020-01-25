@@ -1,5 +1,5 @@
 /*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
-(function($protobuf) {
+module.exports = function($protobuf) {
     "use strict";
 
     var $Reader = $protobuf.Reader, $util = $protobuf.util;
@@ -976,4 +976,4 @@
     })();
 
     return $root;
-})(protobuf);
+};
