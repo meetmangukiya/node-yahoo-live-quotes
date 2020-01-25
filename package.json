@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "protobufjs": "^6.8.8",
+    "ws": "^7.2.1"
+  },
+  "name": "yahoo-live-quotes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@gitlab.com:phoenix-upwork/arun/yahoo-live-quotes.git",
+  "author": "Meet Mangukiya <meetmangukiya98@gmail.com>",
+  "license": "MIT"
+}
