@@ -5,17 +5,17 @@ require("./__finStreamer-proto")(protobuf);
 const getQuotesFor = (symbols, cb) => {
   const ws = new WebSocket("wss://streamer.finance.yahoo.com/");
 
-  ws.on("open", () => {
+  ws.onopen = () => {
     console.log(`subscribing to ${symbols}`);
     ws.send(JSON.stringify({ subscribe: symbols }));
-  });
+  };
 
-  ws.on("message", data => {
+  ws.onmessage = data => {
     const PricingData = protobuf.roots.default.quotefeeder.PricingData;
     const decodedData = PricingData.decode(Buffer.from(data, "base64"));
     const decodedObject = PricingData.toObject(decodedData);
     cb(decodedObject);
-  });
+  };
 };
 
 module.exports = { getQuotesFor };
