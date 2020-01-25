@@ -1,4 +1,4 @@
-const WebSocket = require("ws");
+const WebSocket = require("isomorphic-ws");
 const protobuf = require("protobufjs");
 require("./__finStreamer-proto")(protobuf);
 
