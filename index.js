@@ -16,6 +16,8 @@ const getQuotesFor = (symbols, cb) => {
     const decodedObject = PricingData.toObject(decodedData);
     cb(decodedObject);
   };
+
+  return ws;
 };
 
 module.exports = { getQuotesFor };
