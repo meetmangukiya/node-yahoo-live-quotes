@@ -24,9 +24,9 @@ const getQuotesFor = (symbols, cb) => {
     const PricingData = protobuf.roots.default.quotefeeder.PricingData;
     let decodedObject = null;
 
-    if (typeof process === 'object')
-      decodedData = PricingData.decode(Buffer.from(data, "base64"));
-    else
+    //if (typeof process === 'object')
+      //decodedData = PricingData.decode(Buffer.from(data, "base64"));
+    //else
       decodedData = PricingData.decode(base64ToArray(data));
     decodedObject = PricingData.toObject(decodedData);
     cb(decodedObject);
