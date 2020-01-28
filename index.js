@@ -20,14 +20,14 @@ const getQuotesFor = (symbols, cb) => {
     ws.send(JSON.stringify({ subscribe: symbols }));
   };
 
-  ws.onmessage = data => {
+  ws.onmessage = event => {
     const PricingData = protobuf.roots.default.quotefeeder.PricingData;
     let decodedObject = null;
 
     //if (typeof process === 'object')
       //decodedData = PricingData.decode(Buffer.from(data, "base64"));
     //else
-      decodedData = PricingData.decode(base64ToArray(data));
+      decodedData = PricingData.decode(base64ToArray(event.data));
     decodedObject = PricingData.toObject(decodedData);
     cb(decodedObject);
   };
