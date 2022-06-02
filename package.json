@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "isomorphic-ws": "^4.0.1",
-    "protobufjs": "^6.8.8",
+    "protobufjs": "^6.11.3",
     "ws": "^7.4.6"
   },
   "name": "yahoo-live-quotes",
